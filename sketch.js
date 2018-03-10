@@ -19,76 +19,77 @@ let slide;
 let muse, aqours;
 let season = 1;
 
-function preload() {
-	song = createAudio("href=https://raw.githubusercontent.com/qmochi/waifuselect/master/sif.mp3");
+	function preload() {
+	//background music
+	song = createAudio("https://raw.githubusercontent.com/qmochi/waifuselect/master/sif.mp3");
+	
+	// Muse images
+	rin = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/rin.png");
+	rinT = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/RinT.png");
+		
+	pana = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/hanayo.png");
+	panaT = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/HanayoT.png");
+
+	maki = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/maki.jpg");
+	makiT = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/MakiT.png");
+
+	umi = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/umi.png");
+	umiT = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/UmiT.png");
+		
+	honk = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/honoka.png");
+	honkT = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/HonokaT.png");
+
+	koto = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/kotori.jpg");
+	kotoT = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/KotoriT.png");
+
+	eli = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/eli.jpg");
+	eliT = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/eliT.png");
+
+	nozo = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/nozomi.png");
+	nozoT = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/NozomiT.png");
+
+	nico = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/nico.png");
+	nicoT = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/NicoT.png");
+
+	// Aqours images
+	ruby = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/ruby.png");
+	rubyT = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/rubyT.png");
+		
+	yoshi = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/yoshiko.png");
+	yoshiT = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/yoshikoT.png");
+
+	hanamaru = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/hanamaru.jpg");
+	hanamaruT = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/hanamaruT.png");
+
+	you = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/you.png");
+	youT = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/youT.png");
+		
+	chika = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/chika.jpg");
+	chikaT = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/chikaT.png");
+
+	riko = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/riko.png");
+	rikoT = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/rikoT.png");
+
+	mari = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/mari.png");
+	mariT = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/mariT.png");
+
+	kanan = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/kanan.png");
+	kananT = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/kananT.png");
+
+	dia = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/dia.jpg");
+	diaT = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/diaT.png");
+	
+	// logo = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/logo.png");
+	
 	// play music
 	song.volume(0.2);
 	song.loop();	
+	
 }
 
 function setup() {
 	createCanvas(960,720);
 
-
-	
-	// Muse images
-	rin = loadImage("rin.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/rin.png");
-	rinT = loadImage("RinT.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/RinT.png");
-		
-	pana = loadImage("hanayo.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/hanayo.png");
-	panaT = loadImage("HanayoT.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/HanayoT.png");
-
-	maki = loadImage("maki.jpg" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/maki.jpg");
-	makiT = loadImage("MakiT.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/MakiT.png");
-
-	umi = loadImage("umi.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/umi.png");
-	umiT = loadImage("UmiT.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/UmiT.png");
-		
-	honk = loadImage("honoka.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/honoka.png");
-	honkT = loadImage("HonokaT.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/HonokaT.png");
-
-	koto = loadImage("kotori.jpg" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/kotori.jpg");
-	kotoT = loadImage("KotoriT.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/KotoriT.png");
-
-	eli = loadImage("eli.jpg" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/eli.jpg");
-	eliT = loadImage("eliT.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/eliT.png");
-
-	nozo = loadImage("nozomi.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/nozomi.png");
-	nozoT = loadImage("NozomiT.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/NozomiT.png");
-
-	nico = loadImage("nico.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/nico.png");
-	nicoT = loadImage("NicoT.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/NicoT.png");
-
-	// Aqours images
-	ruby = loadImage("ruby.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/ruby.png");
-	rubyT = loadImage("rubyT.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/rubyT.png");
-		
-	yoshi = loadImage("yoshiko.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/yoshiko.png");
-	yoshiT = loadImage("yoshikoT.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/yoshikoT.png");
-
-	hanamaru = loadImage("hanamaru.jpg" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/hanamaru.jpg");
-	hanamaruT = loadImage("hanamaruT.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/hanamaruT.png");
-
-	you = loadImage("you.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/you.png");
-	youT = loadImage("youT.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/youT.png");
-		
-	chika = loadImage("chika.jpg" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/chika.jpg");
-	chikaT = loadImage("chikaT.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/chikaT.png");
-
-	riko = loadImage("riko.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/riko.png");
-	rikoT = loadImage("rikoT.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/rikoT.png");
-
-	mari = loadImage("mari.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/mari.png");
-	mariT = loadImage("mariT.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/mariT.png");
-
-	kanan = loadImage("kanan.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/kanan.png");
-	kananT = loadImage("kananT.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/kananT.png");
-
-	dia = loadImage("dia.jpg" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/dia.jpg");
-	diaT = loadImage("diaT.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/diaT.png");
-	
-	// logo = loadImage("logo.png" || "href=https://raw.githubusercontent.com/qmochi/waifuselect/master/logo.png");
-	
 	textW = (width * 0.09);
 	textH = (height * 0.29);
 	textW2 = (width * 0.095);
