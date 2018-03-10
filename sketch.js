@@ -18,6 +18,8 @@ let x = 200;
 let slide;
 let muse, aqours;
 let season = 1;
+let vol;
+let defaultVol = 0.2;
 
 	function preload() {
 	//background music
@@ -81,14 +83,14 @@ let season = 1;
 	
 	// logo = loadImage("https://raw.githubusercontent.com/qmochi/waifuselect/master/logo.png");
 	
-	// play music
-	song.volume(0.2);
-	song.loop();	
-	
 }
 
 function setup() {
 	createCanvas(960,720);
+		
+	// play music
+	vol = defaultVol;
+	song.loop();	
 
 	textW = (width * 0.09);
 	textH = (height * 0.29);
@@ -106,6 +108,7 @@ function setup() {
 }
 
 function draw() {
+	song.volume(vol);
 	
 	if (slide == true && x > 0) {
 		x = x - 20;
@@ -779,11 +782,25 @@ function draw() {
 }
 
 function mousePressed(){
+	// clicking on season toggler
 	if (muse) {
 		season = 1	
 	} else if (aqours) {
 		season = 2;
 	}
+	
+}
+
+function keyTyped() {
+	// toggle mute music
+  if (key === 'm') {
+		if (vol > 0) {
+			vol = 0;
+		} else {
+			vol = defaultVol;
+		}
+	}
+	return false;
 	
 }
 	
