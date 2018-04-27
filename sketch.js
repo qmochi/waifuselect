@@ -186,7 +186,10 @@ function fontRead() {
 }
 
 function setup() {
-	createCanvas(windowWidth, windowWidth*0.75);
+	if (windowWidth > windowHeight) {
+	createCanvas(windowHeight*1.25, windowHeight);
+	} else createCanvas(windowWidth, windowWidth*0.75);
+	
 	noStroke();
 	
 	jpfont = loadFont("rodin.OTF", fontRead);
@@ -1264,5 +1267,7 @@ function playVoice(clips) {
 }
 
 function windowResized() {
-	resizeCanvas(windowWidth, windowWidth*0.75);
+	if (windowWidth > windowHeight) {
+		resizeCanvas(windowHeight*1.25, windowHeight);
+	} else resizeCanvas(windowWidth, windowWidth*0.75);
 }
